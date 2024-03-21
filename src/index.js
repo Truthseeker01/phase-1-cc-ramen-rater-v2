@@ -12,7 +12,7 @@ function handleClick(clickedRamen) {
 
 function handleDelete(ramen){
   ramen.remove() 
-  document.querySelector(".detail-image").src = "./assets/image-placeholder.jpg"
+  document.querySelector(".detail-image").src = "./assets/ramen to display.png"
   document.querySelector(".name").textContent = ""
   document.querySelector(".restaurant").textContent = ""
   document.getElementById("rating-display").innerHTML = ""
