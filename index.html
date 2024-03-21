@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>Ramen Rater</title>
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script defer type="module" src="./src/index.js"></script>
+  <script defer src="./src/index.js"></script>
 </head>
 
 <body>
@@ -15,6 +15,7 @@
 
   
   <div id="ramen-menu">
+
   
   </div>
 
@@ -48,6 +49,14 @@
     <label for="new-comment">Comment: </label>
     <textarea name="new-comment" name="new-comment" id="new-comment"></textarea>
     <input type="submit" id='submit-button' value="Create" />
+  </form>
+  <form id="edit-ramen">
+    <h4>Update the Featured Ramen</h4>
+    <label for="rating">Rating: </label>
+    <input type="number" name="rating" id="edit-rating" />
+    <label for="new-comment">Comment: </label>
+    <textarea name="new-comment" id="edit-comment"></textarea>
+    <input type="submit" value="Update" />
   </form>
 
 </body>
