@@ -11,12 +11,12 @@ function handleClick(clickedRamen) {
 };
 
 function handleDelete(ramen){
-  ramen.remove() 
-  document.querySelector(".detail-image").src = "./assets/ramen to display.png"
-  document.querySelector(".name").textContent = ""
-  document.querySelector(".restaurant").textContent = ""
-  document.getElementById("rating-display").innerHTML = ""
-  document.getElementById("comment-display").innerHTML = ""
+  ramen.remove();
+  document.querySelector(".detail-image").src = "./assets/ramen to display.png";
+  document.querySelector(".name").textContent = "";
+  document.querySelector(".restaurant").textContent = "";
+  document.getElementById("rating-display").innerHTML = "";
+  document.getElementById("comment-display").innerHTML = "";
 
 }
 
@@ -26,9 +26,9 @@ const addSubmitListener = () => {
   form.addEventListener("submit", e => {
     e.preventDefault();
     const newImg = document.createElement("img");
-    const div = document.createElement("div")
-    div.appendChild(newImg)
-    document.querySelector("#ramen-menu").appendChild(div)
+    const div = document.createElement("div");
+    div.appendChild(newImg);
+    document.querySelector("#ramen-menu").appendChild(div);
     newImg.src = document.getElementById("new-image").value;
     // document.querySelector("#ramen-menu").appendChild(newImg);
     //assigning the values of inputs to variables to access them after resetting the form
@@ -43,18 +43,18 @@ const addSubmitListener = () => {
       document.querySelector(".restaurant").textContent = submittedRestaurant;
       document.getElementById("rating-display").innerHTML = submittedRating;
       document.getElementById("comment-display").innerHTML = submittedComment;  
-    })
+    });
   
     const btn = document.createElement("button")
-    btn.innerHTML = "x"
-    btn.style.position= "relative"
-    btn.style.top = "0%"
-    btn.style.right = "55%"
-    btn.style.fontSize = "8px"
-    div.appendChild(btn)
+    btn.innerHTML = "x";
+    btn.style.position= "relative";
+    btn.style.top = "0%";
+    btn.style.right = "55%";
+    btn.style.fontSize = "8px";
+    div.appendChild(btn);
     btn.addEventListener("click", () => { 
-      handleDelete(newImg)
-      btn.style.display = "none"
+      handleDelete(newImg);
+      btn.style.display = "none";
     }
   );
 })};
@@ -83,23 +83,25 @@ const displayRamens = () => {
       btn.style.display = "none"
     })
   }, handleClick(ramens[0])
-  ))
+  ));
 };
 
+const form = document.getElementById("edit-ramen");
 document.getElementById("edit-ramen").addEventListener("submit", e => {
   e.preventDefault();
   document.getElementById("comment-display").textContent = document.getElementById("edit-comment").value;
   document.getElementById("rating-display").textContent = document.getElementById("edit-rating").value;
-})
+  form.reset();
+});
 
 
 const main = () => {
   // invoke displayRamens here
-  displayRamens()
+  displayRamens();
   // Invoke addSubmitListener here
-  addSubmitListener()
+  addSubmitListener();
 }
-main()
+main();
 
 //Export functions for testing
 // export {
